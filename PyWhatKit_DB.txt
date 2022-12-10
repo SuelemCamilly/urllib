@@ -171,5 +171,16 @@ Message: Preço Baixou!! - Preço: U$4.16 - Acesse a página do cliente comum.
 Date: 10/12/2022
 Time: 14:6
 Phone Number: +5547984717831
-Message: Preço Baixou!! - Preço: U$4.65 - Acesse a página do cliente comum.
+Message: Preço ideal encontrado - Preço: U$4.65 - Acesse a página do cliente comum.
+--------------------
+Date: 10/12/2022
+Time: 18:55
+Phone Number: +5547984717831
+
+Message: Preço ideal encontrado - Preço: U$4.46
+--------------------
+Date: 10/12/2022
+Time: 18:57
+Phone Number: +5547984717831
+Message: Preço ideal encontrado - Preço: U$4.66
 --------------------
