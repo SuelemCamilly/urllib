@@ -1,5 +1,5 @@
 
-def identifica_preco(url):
+def acha_preco(url):
     import urllib.request
 
     pagina = urllib.request.urlopen(url)
@@ -17,23 +17,23 @@ def consulta_preco():
     valor_minino = 4.70
 
     while True:
-        cliente_comum = identifica_preco("http://beans.itcarlow.ie/prices-loyalty.html")
-        cliente_fidelidade = identifica_preco("http://beans.itcarlow.ie/prices.html")
+        comum = acha_preco("http://beans.itcarlow.ie/prices-loyalty.html")
+        fidelidade = acha_preco("http://beans.itcarlow.ie/prices.html")
 
 
         menor_valor = (
-            cliente_comum if cliente_comum <= cliente_fidelidade else cliente_fidelidade
+            comum if comum <= fidelidade else fidelidade
         )
 
         pagina = (
-            "cliente comum" if menor_valor == cliente_comum else "cliente fidelidade"
+            "cliente comum" if menor_valor == comum else "cliente fidelidade"
         )
 
     
-        if cliente_comum >= valor_minino and cliente_fidelidade >= valor_minino:
+        if comum >= valor_minino and fidelidade >= valor_minino:
             print("\nEspere...")
-            print(f"\033[31mPreço Fidelidade: U${cliente_fidelidade:.2f}\033[m")
-            print(f"\033[31mPreço Comum: U${cliente_comum:.2f}\033[m\n\033[m")
+            print(f"\033[31mPreço Fidelidade: U${fidelidade:.2f}\033[m")
+            print(f"\033[31mPreço Comum: U${comum:.2f}\033[m\n\033[m")
             sleep(4)
 
         else:
@@ -43,7 +43,7 @@ def consulta_preco():
 
     return f"Preço ideal encontrado - Preço: U${menor_valor:.2f}"
 
-def msg_whatsapp(mensagem):
+def msg_whatsapp(msg):
     from pywhatkit import sendwhatmsg
     from datetime import datetime
 
@@ -51,7 +51,7 @@ def msg_whatsapp(mensagem):
     hora = agora.hour
     minuto = agora.minute + 1
 
-    sendwhatmsg("+5547984717831", mensagem, hora, minuto, 20, True, 10)
+    sendwhatmsg("+5547984717831", msg, hora, minuto, 20, True, 10)
     print("\033[32mMensagem enviada no whatsapp\033[m")
     
 
