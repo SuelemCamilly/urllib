@@ -14,7 +14,7 @@ def acha_preco(url):
 def consulta_preco():
     from time import sleep
 
-    valor_minino = 4.70
+    min = 4.70
 
     while True:
         comum = acha_preco("http://beans.itcarlow.ie/prices-loyalty.html")
@@ -30,7 +30,7 @@ def consulta_preco():
         )
 
     
-        if comum >= valor_minino and fidelidade >= valor_minino:
+        if comum >= min and fidelidade >= min:
             print("\nEspere...")
             print(f"\033[31mPreço Fidelidade: U${fidelidade:.2f}\033[m")
             print(f"\033[31mPreço Comum: U${comum:.2f}\033[m\n\033[m")
